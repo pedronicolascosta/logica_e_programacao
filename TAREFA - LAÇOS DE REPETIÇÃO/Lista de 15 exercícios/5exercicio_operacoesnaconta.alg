@@ -2,7 +2,7 @@ algoritmo "5exercicio_operacoesnaconta"
 // Função : oportunidade do usuario escolher a operação a ser feita: Saque, depósito ou ver saldo,
 // Autor :  Nicolas Costa
 // Data : 10/08/2021
-// Seção de Declarações 
+// Seção de Declarações
 var
 login, senha, qtde, opcao, saldo, saque, deposito, total: inteiro
 resp: caracter
@@ -31,12 +31,12 @@ enquanto (login<>2021) ou (senha<>1234) faca
                escreval ("Você realizou três tentativas!")
                escreval ("Seu acesso a conta foi bloqueado! Tente novamente mais tarde.")
                interrompa
+               fimalgoritmo
             fimse
 fimenquanto
 
 escreval("")
-resp<-"sim"
-enquanto(resp="SIM")faca
+enquanto (login=2021) ou (senha=1234) faca
    escreval("----------Seja bem-vindo(a)!----------")
    escreval("Escolha o que deseja fazer em sua conta hoje:")
    escreval("1-- SAQUE")
@@ -45,6 +45,7 @@ enquanto(resp="SIM")faca
    escreval("0-- SAIR")
    leia(opcao)
    saldo<- 1500
+   
    enquanto (opcao=1)ou(opcao=2)ou(opcao=3)ou(opcao=0) faca
             se (opcao=1)entao
                escreval("Você escolheu SAQUE")
@@ -57,8 +58,10 @@ enquanto(resp="SIM")faca
                escreval("Agora, seu saldo ficou em",saldo)
                escreval("Deseja continuar a realizar operaçoes? Responda com 'SIM' ou 'NAO'")
                leia(resp)
-                   se ((continua="NAO") ou (continua="nao") ou (continua="Nao")) entao
-                   interrompa
+                   se (resp="NAO") ou (resp="nao") ou (resp="Nao") entao
+                   fimalgoritmo
+                   senao
+                   fimse
             fimse
 
             se (opcao=2)entao
@@ -71,11 +74,10 @@ enquanto(resp="SIM")faca
                saldo <- total
                escreval("Agora, seu saldo ficou em",saldo)
                escreval("Deseja continuar a realizar operaçoes? Responda com 'SIM' ou 'NAO'")
-               leia(continua)
-                   se ((continua="NAO") ou (continua="nao") ou (continua="Nao")) entao
-                   interrompa
+               leia(resp)
+                   se (resp="NAO") ou (resp="nao") ou (resp="Nao") entao
+                   fimalgoritmo
                    senao
-                   repita
                    fimse
             fimse
 
@@ -84,11 +86,10 @@ enquanto(resp="SIM")faca
                escreval("")
                escreval("SEU SALDO É DE",saldo)
                escreval("Deseja continuar a realizar operaçoes? Responda com 'SIM' ou 'NAO'")
-               leia(continua)
-                   se ((continua="NAO") ou (continua="nao") ou (continua="Nao")) entao
-                   interrompa
+               leia(resp)
+                   se (resp="NAO") ou (resp="nao") ou (resp="Nao") entao
+                   fimalgoritmo
                    senao
-                   repita
                    fimse
             fimse
 
@@ -96,11 +97,8 @@ enquanto(resp="SIM")faca
                escreval("Você escolheu SAIR")
                escreval("Volte sempre!")
             fimse
-         
+
+
 fimenquanto
 escreval("Exercício 5/15")
-
 fimalgoritmo
-
-
-
